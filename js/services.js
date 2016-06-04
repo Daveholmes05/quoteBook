@@ -1,1 +1,0 @@
-// angular.module('quoteBook').controller('ctrl');

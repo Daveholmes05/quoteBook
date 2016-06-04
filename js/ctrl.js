@@ -1,8 +1,18 @@
-angular.module('quoteBook').controller('ctrl', function($scope) {
+angular.module('quoteBook').controller('ctrl', function($scope, dataService) {
 
-	console.log($scope.newQuote);
 
-	$scope.logItNow = function() {
-		console.log($scope.newQuote);
-	}
+	$scope.quoteArray = dataService.getQuotes();
+	var author = prompt('Bro... What\'s your name?');
+
+
+	$scope.addQuote = function() {
+		var quoteToAdd = {
+			text: $scope.newQuote,
+			author: author || 'Anonymous'
+		};
+
+		dataService.getQuotes().unshift(quoteToAdd);
+		$scope.newQuote = '';
+	};
+
 });
