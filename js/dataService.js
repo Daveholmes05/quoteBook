@@ -14,10 +14,11 @@ angular.module('quoteBook')
       { text: 'What even is a jQuery?', author: 'Tyler S. McGinnis'}
 	];
 
-
 	service.getQuotes = function() {
 		return quotes;
 	};
 
 	return service;
+	
+
 });

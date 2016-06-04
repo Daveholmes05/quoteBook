@@ -15,4 +15,8 @@ angular.module('quoteBook').controller('ctrl', function($scope, dataService) {
 		$scope.newQuote = '';
 	};
 
+	$scope.deleteMe = function(textToDelete) {
+		dataService.removeData(textToDelete);
+	};
+
 });
